@@ -1,18 +1,20 @@
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
+
         int numberCars=3;
+
         Car[] cars = new Car[numberCars];
 
         for (int i = 0; i < cars.length; i++) {
             System.out.println("Введите название машины №" + (i + 1) + ":");
             String nameCar = checkCarName();
             System.out.println("Введите скорость машины №" + (i + 1) + ":");
-            int speedCar = checkScannerSpeed();
+            int speedCar = checkCarSpeed();
             cars[i] = new Car(nameCar, speedCar);
         }
-        Race.leManRace(cars);
 
+        Race.leManRace(cars);
     }
 
 
@@ -31,7 +33,7 @@ public class Main {
     }
 
 
-    public static int checkScannerSpeed() {
+    public static int checkCarSpeed() {
         Scanner scanner = new Scanner(System.in);
         while (true) {
             if (scanner.hasNextInt()) {
